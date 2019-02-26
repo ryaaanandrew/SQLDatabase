@@ -19,5 +19,6 @@ const knex = require("knex")({
 
 knex('famous_people').insert({first_name: firstName, last_name: lastName, birthdate: birthdate })
     .then(function(rows) {
-        console.log('insertion complete...')
+        console.log('inserting person into database...')
+        knex.destroy();
     });
